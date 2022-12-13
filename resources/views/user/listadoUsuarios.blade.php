@@ -42,7 +42,14 @@
 @endsection
 
 @section('scripts')
-    {{$dataTable->scripts()}}
+    <script type="text/javascript">$(function(){window.LaravelDataTables=window.LaravelDataTables||{};window.LaravelDataTables["users-table"]=$("#users-table").DataTable({"serverSide":true,"processing":true,"ajax":{"url":"https:\/\/ruedabrand-production.up.railway.app\/es\/listado-usuarios","type":"GET","data":function(data) {
+            for (var i = 0, len = data.columns.length; i < len; i++) {
+                if (!data.columns[i].search.value) delete data.columns[i].search;
+                if (data.columns[i].searchable === true) delete data.columns[i].searchable;
+                if (data.columns[i].orderable === true) delete data.columns[i].orderable;
+                if (data.columns[i].data === data.columns[i].name) delete data.columns[i].name;
+            }
+            delete data.search.regex;}},"columns":[{"data":"name","name":"name","title":"NOMBRE","orderable":true,"searchable":true},{"data":"surname","name":"surname","title":"APELLIDOS","orderable":true,"searchable":true},{"data":"email","name":"email","title":"EMAIL","orderable":true,"searchable":true},{"data":"rol","name":"rol","title":"ROL","orderable":true,"searchable":true},{"data":"action","name":"action","title":"Action","orderable":false,"searchable":false,"width":300,"className":"not-export-col"}],"dom":"Bfrtip","order":[[1,"desc"]],"buttons":[{"extend":"create"},{"extend":"export"},{"extend":"print"},{"extend":"reset"},{"extend":"reload"}]});});</script>
     <script>
         var title =document.head.querySelector("title").innerHTML='LISTADO USUARIOS - R🗲';
     </script>
