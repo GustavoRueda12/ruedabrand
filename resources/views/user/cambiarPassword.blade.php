@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="contenido">
+        @include('components.flash_alerts')
         <h1 class="mb-5 mt-4" style="align-items: center;display: flex;flex-direction: column;font-weight: bold;">CAMBIAR CONTRASEÑA </h1>
         <div>
             <div>
@@ -12,7 +13,7 @@
                     <div class="row mb-3 justify-content-center">
                         <div class="col-md-6">
                             <div class="form-group form-floating mb-3">
-                                <input type="password" class="form-control" name="oldPassword" value="{{ old('oldPassword') }}" placeholder="Contraseña anterior" required="required">
+                                <input type="password" class="form-control" name="oldPassword" value="{{ old('oldPassword') }}" placeholder="Contraseña anterior">
                                 <label for="floatingName">Contraseña anterior</label>
                                 @if ($errors->has('oldPassword'))
                                     <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('oldPassword') }}</span>
@@ -25,10 +26,10 @@
                     <div class="row mb-3 justify-content-center">
                         <div class="col-md-6">
                             <div class="form-group form-floating mb-3">
-                                <input type="password" class="form-control" name="newPassword" value="{{ old('newPassword') }}" placeholder="Contraseña nueva" required="required">
+                                <input type="password" class="form-control" name="password" value="{{ old('password') }}" placeholder="Contraseña nueva">
                                 <label for="floatingName">Contraseña nueva</label>
-                                @if ($errors->has('newPassword'))
-                                    <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('newPassword') }}</span>
+                                @if ($errors->has('password'))
+                                    <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('password') }}</span>
                                     <br>
                                 @endif
                             </div>
@@ -39,10 +40,10 @@
                     <div class="row mb-3 justify-content-center">
                         <div class="col-md-6">
                             <div class="form-group form-floating mb-3">
-                                <input type="password" class="form-control" name="newPassword" value="{{ old('confirmNewPassword') }}" placeholder="Confirmar contraseña nueva" required="required">
+                                <input type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Confirmar contraseña nueva">
                                 <label for="floatingName">Confirmar contraseña nueva</label>
-                                @if ($errors->has('confirmNewPassword'))
-                                    <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('confirmNewPassword') }}</span>
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('password_confirmation') }}</span>
                                     <br>
                                 @endif
                             </div>
