@@ -14,7 +14,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-     <link  rel="icon"   href="../assets/img/logo/RBlancaTransparente.png" type="image/png" />
+     <link  rel="icon"   href="public/assets/img/logo/RBlancaTransparente.png" type="image/png" />
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
