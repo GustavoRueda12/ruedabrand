@@ -33,7 +33,14 @@
 @endsection
 
 @section('scripts')
-    {{$dataTable->scripts()}}
+    <script type="text/javascript">$(function(){window.LaravelDataTables=window.LaravelDataTables||{};window.LaravelDataTables["purchases-table"]=$("#purchases-table").DataTable({"serverSide":true,"processing":true,"ajax":{"url":"https:\/\/ruedabrand-production.up.railway.app\/es\/listado-compras","type":"GET","data":function(data) {
+            for (var i = 0, len = data.columns.length; i < len; i++) {
+                if (!data.columns[i].search.value) delete data.columns[i].search;
+                if (data.columns[i].searchable === true) delete data.columns[i].searchable;
+                if (data.columns[i].orderable === true) delete data.columns[i].orderable;
+                if (data.columns[i].data === data.columns[i].name) delete data.columns[i].name;
+            }
+            delete data.search.regex;}},"columns":[{"data":"id","name":"id","title":"N\u00ba compra","orderable":true,"searchable":true},{"data":"direccion","name":"direccion","title":"Direccion","orderable":true,"searchable":true},{"data":"codigo_postal","name":"codigo_postal","title":"Codigo Postal","orderable":true,"searchable":true},{"data":"localidad","name":"localidad","title":"Localidad","orderable":true,"searchable":true},{"data":"pais","name":"pais","title":"Pais","orderable":true,"searchable":true},{"data":"telefono","name":"telefono","title":"Telefono","orderable":true,"searchable":true},{"data":"total_price","name":"total_price","title":"TOTAL","orderable":true,"searchable":true},{"data":"fecha_de_compra","name":"fecha_de_compra","title":"Fecha De Compra","orderable":true,"searchable":true,"className":"fechaCompra"},{"data":"action","name":"action","title":"VER PRODUCTOS","orderable":false,"searchable":false,"width":40,"className":"text-center"}],"dom":"Bfrtip","order":[[1,"desc"]],"select":{"style":"single"},"buttons":[{"extend":"excel"},{"extend":"csv"},{"extend":"pdf"},{"extend":"print"},{"extend":"reset"},{"extend":"reload"}]});});</script>
     @auth
         @hasrole('admin')
     <script>
