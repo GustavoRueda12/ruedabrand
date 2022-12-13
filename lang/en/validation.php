@@ -207,6 +207,36 @@ return [
         'avatar' => [
             'required' => '¡Se te ha olvidado adjuntar la imagen de portada!',
         ],
+        
+        'avatar1' => [
+            'required' => '¡Se te ha olvidado adjuntar la imagen delantera del producto!',
+        ],
+
+        'avatar2' => [
+            'required' => '¡Se te ha olvidado adjuntar la imagen trasera del producto!',
+        ],
+
+        'direccion' => [
+            'required' => '¡Se te ha olvidado escribir la dirección!',
+        ],
+
+        'codigoPostal' => [
+            'required' => '¡Se te ha olvidado escribir el codigo postal!',
+        ],
+
+        'localidad' => [
+            'required' => '¡Se te ha olvidado escribir la localidad!',
+        ],
+
+        'pais' => [
+            'required' => '¡Se te ha olvidado escribir el pais!',
+        ],
+
+        'telefono' => [
+            'required' => '¡Se te ha olvidado escribir el teléfono de contacto!',
+            'numeric' => 'Debe de ser un número de teléfono valido',
+            'digits' => 'Tiene que tener 9 digitos',
+        ],
     ],
 
     /*
