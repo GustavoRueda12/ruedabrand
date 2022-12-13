@@ -39,8 +39,8 @@
                             @endif
                         </div>
 
-                        <div class="form-group form-floating mb-3">
-                            <input type="text" class="form-control" name="direccion" value="{{ Auth::user()->direccion }}" placeholder="Dirección">
+                      <div class="form-group form-floating mb-3">
+                            <input type="text" class="form-control" name="direccion" value="{{ Auth::user()->direccion !== null ? Auth::user()->direccion : old('direccion')}}" placeholder="Dirección" >
                             <label for="floatingName">Dirección</label>
                             @if ($errors->has('direccion'))
                                 <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('direccion') }}</span>
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="form-group form-floating mb-3">
-                            <input type="text" class="form-control" name="codigoPostal" value="{{ Auth::user()->codigoPostal }}" placeholder="Código postal">
+                            <input type="text" class="form-control" name="codigoPostal" value="{{ Auth::user()->codigoPostal !== null ? Auth::user()->codigoPostal : old('codigoPostal')}}" placeholder="Código postal" >
                             <label for="floatingName">Código postal</label>
                             @if ($errors->has('codigoPostal'))
                                 <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('codigoPostal') }}</span>
@@ -58,7 +58,7 @@
                         </div>
 
                         <div class="form-group form-floating mb-3">
-                            <input type="text" class="form-control" name="localidad" value="{{ Auth::user()->localidad }}" placeholder="Localidad">
+                            <input type="text" class="form-control" name="localidad" value="{{ Auth::user()->localidad !== null ? Auth::user()->localidad : old('localidad')}}" placeholder="Localidad" >
                             <label for="floatingName">Localidad</label>
                             @if ($errors->has('localidad'))
                                 <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('localidad') }}</span>
@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="form-group form-floating mb-3">
-                            <input type="text" class="form-control" name="pais" value="{{ Auth::user()->pais }}" placeholder="País">
+                            <input type="text" class="form-control" name="pais" value="{{ Auth::user()->pais !== null ? Auth::user()->pais : old('pais')}}" placeholder="País" >
                             <label for="floatingName">País</label>
                             @if ($errors->has('pais'))
                                 <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('pais') }}</span>
@@ -77,7 +77,7 @@
 
 
                         <div class="form-group form-floating mb-3">
-                            <input type="text" class="form-control" name="telefono" value="{{ Auth::user()->telefono }}" placeholder="Teléfono">
+                            <input type="text" class="form-control" name="telefono" value="{{ Auth::user()->telefono !== null ? Auth::user()->telefono : old('telefono')}}" placeholder="Teléfono">
                             <label for="floatingName">Teléfono</label>
                             @if ($errors->has('telefono'))
                                 <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('telefono') }}</span>
@@ -92,7 +92,7 @@
                     <div style="width: 100%;">
                             <div class="precioTotal" style="display: flex;justify-content: space-between;width: 100%;">
                                 <p style="font-size: 20px">Total</p>
-                               @if($precioTotal == null)
+                                @if($precioTotal == null)
                                     <p style="font-size: 20px" id="precioTotal">{{old('precioTotal')}}€</p>
                                 @else
                                 <p style="font-size: 20px" id="precioTotal">{{$precioTotal}}€</p>
@@ -103,10 +103,10 @@
                         @else
                             <input type="hidden" name="precioTotal" value="{{$precioTotal}}">
                         @endif
+
                             <div>
                                 <button type="submit" id="buttomLogin" style="width: 100%; min-width: 194px;font-size: 17px;margin-bottom: 15px" class="finalizarComopra btn">Finalizar Pedido</button>
                             </div>
-
                     </div>
 
                 </div>
@@ -121,3 +121,4 @@
         var title =document.head.querySelector("title").innerHTML='COMPRAR - R🗲';
     </script>
 @endsection
+
