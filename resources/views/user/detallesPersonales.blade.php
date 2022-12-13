@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="contenido">
+    @include('components.flash_alerts')
         <h1 class="mb-5 mt-4" style="align-items: center;display: flex;flex-direction: column;font-weight: bold;">DATOS PERSONALES</h1>
         <div>
             <div>
