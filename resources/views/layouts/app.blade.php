@@ -4,16 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>R🗲</title>
+    <title>RUEDA BRAND🗲</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link rel="icon" href="logoR" />
+     <link  rel="icon"   href="../assets/img/logo/RBlancaTransparente.png" type="image/png" />
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
