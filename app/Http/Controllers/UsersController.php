@@ -115,20 +115,22 @@ class UsersController extends Controller
 
     public function cambiarPassword (Request $request)
     {
-        $request->validate([
-
+         $request->validate([
+            'oldPassword' => ['required', 'string', 'min:8'],
+            'password' => ['required', 'string', 'min:8','confirmed'],
+            'password_confirmation' => ['required', 'string', 'min:8'],
         ]);
 
 
         #Match The Old Password
         if(!Hash::check($request->oldPassword, auth()->user()->password)){
-            return back()->with("error", "La contraseña antigua no coincide!");
+            return back()->with("danger", "La contraseña anterior no coincide!");   
         }
 
 
         #Update the new Password
         User::whereId(auth()->user()->id)->update([
-            'password' => Hash::make($request->newPassword)
+            'password' => Hash::make($request->password)
         ]);
         return back()->with('message','La contraseña ha sido cambiada con éxito');
     }
