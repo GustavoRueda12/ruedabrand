@@ -15,6 +15,10 @@
                                 <div class="col-md-6">
                                     <div class="mb-4">Seleccione la imagen del producto por delante </div>
                                     <input id="avatar1" type="file" class="form-control" name="avatar1">
+                                     @if ($errors->has('avatar1'))
+                                        <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('avatar1') }}</span>
+                                        <br>
+                                    @endif
                                 </div>
                             </div>
 
@@ -22,6 +26,10 @@
                                 <div class="col-md-6">
                                     <div class="mb-4">Seleccione la imagen del producto por detras </div>
                                     <input id="avatar2" type="file" class="form-control" name="avatar2">
+                                     @if ($errors->has('avatar2'))
+                                        <span class="text-danger" style="float: left;text-align: left;">{{ $errors->first('avatar2') }}</span>
+                                        <br>
+                                    @endif
                                 </div>
                             </div>
 
