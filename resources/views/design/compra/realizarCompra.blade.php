@@ -92,9 +92,17 @@
                     <div style="width: 100%;">
                             <div class="precioTotal" style="display: flex;justify-content: space-between;width: 100%;">
                                 <p style="font-size: 20px">Total</p>
+                               @if($precioTotal == null)
+                                    <p style="font-size: 20px" id="precioTotal">{{old('precioTotal')}}€</p>
+                                @else
                                 <p style="font-size: 20px" id="precioTotal">{{$precioTotal}}€</p>
+                                @endif
                             </div>
-                            <input type="hidden" id="precioFinal" name="precioTotal" value="{{$precioTotal}}">
+                        @if($precioTotal == null)
+                            <input type="hidden" name="precioTotal" value="{{old('precioTotal')}}">
+                        @else
+                            <input type="hidden" name="precioTotal" value="{{$precioTotal}}">
+                        @endif
                             <div>
                                 <button type="submit" id="buttomLogin" style="width: 100%; min-width: 194px;font-size: 17px;margin-bottom: 15px" class="finalizarComopra btn">Finalizar Pedido</button>
                             </div>
