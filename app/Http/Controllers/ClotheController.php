@@ -274,6 +274,17 @@ class ClotheController extends Controller
         $user_id = Auth::user()->id;
         $clothe = Clothe::all();
         $cart = Cart::where('user_id', $user_id)->get();
+        
+         $request->validate([
+            'email' => ['required', 'email', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
+            'direccion' => ['required', 'string', 'max:255'],
+            'codigoPostal' => ['required', 'string', 'min:4','max:9'],
+            'localidad' => ['required', 'string', 'max:255'],
+            'pais' => ['required', 'string', 'max:255'],
+            'telefono' => ['required', 'numeric','digits:9'],
+        ]);
 
         $purchase = Purchase::create([
             'user_id'=>$user_id,
