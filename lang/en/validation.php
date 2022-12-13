@@ -152,7 +152,7 @@ return [
     |
     */
 
-    'custom' => [
+   'custom' => [
         'email' => [
             'required' => '¡Se te ha olvidado escribir el email!',
             'email' => '¡Debes escribir un email válido!',
@@ -193,6 +193,22 @@ return [
             'min'=>'La contraseña debe de tener al menos 8 caracteres',
         ],
 
+        'oldPassword' => [
+            'required' => '¡Se te ha olvidado escribir la contraseña anterior!',
+            'min'=>'La contraseña debe de tener al menos 8 caracteres',
+        ],
+
+        'newPassword' => [
+            'required' => '¡Se te ha olvidado escribir la contraseña nueva!',
+            'min'=>'La contraseña debe de tener al menos 8 caracteres',
+            'confirmed' => 'Las contraseñas no coinciden',
+        ],
+
+        'confirmNewPassword' => [
+            'required' => '¡Se te ha olvidado confirmar la contraseña!',
+            'min'=>'La contraseña debe de tener al menos 8 caracteres',
+        ],
+
         'price' => [
             'required' => '¡Se te ha olvidado escribir el precio del producto!',
             'numeric' => '¡Tiene que ser un número!',
@@ -207,7 +223,7 @@ return [
         'avatar' => [
             'required' => '¡Se te ha olvidado adjuntar la imagen de portada!',
         ],
-        
+
         'avatar1' => [
             'required' => '¡Se te ha olvidado adjuntar la imagen delantera del producto!',
         ],
@@ -222,6 +238,8 @@ return [
 
         'codigoPostal' => [
             'required' => '¡Se te ha olvidado escribir el codigo postal!',
+            'min' => 'Como mínimo son 4 digitos',
+            'max' => 'Como máximo son 9 digitos',
         ],
 
         'localidad' => [
