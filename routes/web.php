@@ -82,6 +82,8 @@ Route::get('/es/eliminar-producto-del-carrito-{cart_id}', [App\Http\Controllers\
 
 Route::put('/es/comprar', [App\Http\Controllers\ClotheController::class,'comprar'])->name('comprar');
 
+Route::get('/es/comprar/', [App\Http\Controllers\ClotheController::class,'comprar']);
+
 Route::get('/es/relaizar-compra', [App\Http\Controllers\ClotheController::class,'realizar_compra'])->name('realizar_compra');
 
 Route::get('/es/añadir-admin', [App\Http\Controllers\UsersController::class, 'formCreateAdmin'])->name('create_admin');
