@@ -25,7 +25,7 @@
                             <div  style="display:flex;">
                                 <div style="width: 10%;min-width: 95px;margin-right: 18px;">
                                     <a href="{{route('clothe',$clothes->firstWhere('id',$product->clothe_id)->clothe_name)}}">
-                                        <img style="width: 100%;" src="https://brunosmoda.com/wp-content/uploads/2021/01/CAMISETA-NEGRA-LISA-HOMBRE-10043675_000-5.jpg">
+                                        <img style="width: 100%;" src="{{$clothes->firstWhere('id',$product->clothe_id)->getMedia()->first() !== null ? $clothes->firstWhere('id',$product->clothe_id)->getMedia()->first()->getFullUrl('thumb') : 'https://brunosmoda.com/wp-content/uploads/2021/01/CAMISETA-NEGRA-LISA-HOMBRE-10043675_000-5.jpg'}}">
                                     </a>
 
                                 </div>
